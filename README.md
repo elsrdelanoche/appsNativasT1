@@ -4,13 +4,12 @@ App demo que muestra **5 Fragments** dentro de una sola `MainActivity`, con **Na
 
 > **Última actualización:** 08-sep-2025 (America/Mexico_City)
 
----
+
 
 ## 🎯 Objetivo
 
 Enseñar el uso práctico de **Activities, Fragments y Navigation**, con un **ViewModel compartido** para armar un “perfil de usuario” módulo por módulo.
 
----
 
 ## 📱 Estructura
 
@@ -23,7 +22,6 @@ Enseñar el uso práctico de **Activities, Fragments y Navigation**, con un **Vi
 
 Todos los textos están en español. La UI está hecha en **XML** (no Compose).
 
----
 
 ## 🧱 Arquitectura
 
@@ -31,7 +29,6 @@ Todos los textos están en español. La UI está hecha en **XML** (no Compose).
 - `activityViewModels()` para compartir el estado entre fragments.
 - Actualización **reactiva**: cada fragment observa/actualiza el ViewModel.
 
----
 
 ## 🧩 Dependencias clave
 
@@ -43,8 +40,6 @@ implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.4"
 implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.8.4"
 implementation "androidx.recyclerview:recyclerview:1.3.2"
 ````
-
----
 
 ## 🗂️ Árbol del proyecto (resumen)
 
@@ -74,7 +69,6 @@ app/
          └─ drawable/ (íconos vectoriales: ic_text_fields, ic_button, ic_select, ic_list, ic_info, ic_person, etc.)
 ```
 
----
 
 ## ▶️ Ejecución
 
@@ -83,7 +77,6 @@ app/
 3. Ejecutar en emulador o dispositivo físico (SDK 24+ recomendado).
 4. Navegar con la barra inferior entre las 5 secciones.
 
----
 
 ## 🧪 Cómo usar / Qué probar
 
@@ -97,14 +90,13 @@ app/
 * **Listas**: marca uno o varios *Idiomas* (RecyclerView con `CheckBox`).
 * **Info**: muestra avatar, nombre completo, preferencias (en **líneas separadas**), idiomas y **progreso %** calculado.
 
----
 
 ## 🔄 Conexión entre fragments
 
 * Todos los fragments leen/escriben al **mismo `SharedViewModel`**.
 * El **FAB “Nuevo perfil”** en “Botones” resetea el estado y se refleja en “Texto”, “Selección”, “Listas” e “Info”.
 
----
+
 
 ## 🐞 Problemas comunes (FAQ)
 
@@ -118,7 +110,6 @@ app/
 * **FAB tapado por la barra inferior**
   Se usa margen inferior grande en el fragment. Alternativa: mover el FAB a la **Activity** y anclarlo con `CoordinatorLayout`.
 
----
 
 ## 📸 Checklist de screenshots (entregables)
 
@@ -126,6 +117,7 @@ app/
 Guárdalas en `/screenshots/` del repo con estos nombres:
 
 1. **`01_texto.png`**
+   <img width="428" height="952" alt="image" src="https://github.com/user-attachments/assets/80223602-a1ec-4ee2-8d1f-aadf0d3dcff6" />
    Fragment **Texto** con:
 
    * “Información Personal”
@@ -133,30 +125,34 @@ Guárdalas en `/screenshots/` del repo con estos nombres:
    * Botón **Guardar**
    * (Opcional) Toast “Información guardada”
 
-2. **`02_botones.png`**
+3. **`02_botones.png`**
+  <img width="428" height="952" alt="image" src="https://github.com/user-attachments/assets/831eb3da-3d4d-40de-87b0-48d891ea1fbc" />
    Fragment **Botones** con:
 
    * Botón **Cambiar tema (color)**
    * Fila con **flecha → icono email (con latido)** + texto “Enviar perfil (Toast)”
    * **FAB (Nuevo perfil)** visible, no tapado por la barra
+   <img width="428" height="952" alt="image" src="https://github.com/user-attachments/assets/7fb0436e-dc62-4b69-968e-4f901c9fafbe" />
 
-   *(Opcional)* **`02b_botones_tema.png`** tras pulsar **Cambiar tema**, para que se note el color aplicado luego en **Info**.
 
-3. **`03_seleccion.png`**
+4. **`03_seleccion.png`**
+   <img width="428" height="952" alt="image" src="https://github.com/user-attachments/assets/a979faad-41f0-4201-80e9-838742f83d11" />
    Fragment **Selección** con:
-
+ 
    * Aficiones: al menos 2 marcadas
    * Nivel: **Intermedio**
    * Switch “Perfil público”: **ON**
 
-4. **`04_listas.png`**
+5. **`04_listas.png`**
+   <img width="428" height="952" alt="image" src="https://github.com/user-attachments/assets/3c496228-d6c7-4dd5-a69e-cc6a317f8661" />
    Fragment **Listas** con:
 
    * Idiomas visibles
    * Al menos 2 seleccionados (p. ej., Español e Inglés)
    * Si no caben, que se note el scroll
 
-5. **`05_info.png`**
+7. **`05_info.png`**
+   <img width="428" height="952" alt="image" src="https://github.com/user-attachments/assets/823c698d-5f2b-4a91-9e9e-d77a87662d89" />
    Fragment **Info** con:
 
    * Header redondeado y **ícono de usuario (ic\_person)** tintado por el **themeColor**
@@ -165,7 +161,9 @@ Guárdalas en `/screenshots/` del repo con estos nombres:
    * **Idiomas** listados
    * **Progreso %** > 0 y barra avanzando
 
-6. **`06_reset.png`** *(opcional)*
+8. **`06_reset.png`** *(opcional)*
+   <img width="428" height="952" alt="image" src="https://github.com/user-attachments/assets/27ec6978-632d-4598-8f13-c9631bf50935" />
+   <img width="428" height="952" alt="image" src="https://github.com/user-attachments/assets/3b97a143-9056-4fd2-8b96-37128e2f0de6" />
    Tras **FAB (Nuevo perfil)**:
 
    * **Texto**: campos vacíos
@@ -173,33 +171,6 @@ Guárdalas en `/screenshots/` del repo con estos nombres:
    * **Listas**: idiomas desmarcados
    * **Info**: progreso 0 %
 
-**Cómo capturar:**
 
-* Android Studio → **Running Devices → Screen Capture** (ícono de cámara), o
-* **ADB**:
 
-  ```bash
-  adb exec-out screencap -p > 01_texto.png
-  ```
-
----
-
-## 📦 Publicación en GitHub (sugerido)
-
-```bash
-git init
-git add .
-git commit -m "Mi Perfil de Usuario: app demo con 5 fragments y ViewModel"
-git branch -M main
-git remote add origin https://github.com/<tu_usuario>/<tu_repo>.git
-git push -u origin main
-```
-
----
-
-## 📄 Licencia
-
-MIT (o la que prefieras).
-
-```
 
