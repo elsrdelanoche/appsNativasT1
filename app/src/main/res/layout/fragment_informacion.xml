@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/rootInfo"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Header -->
+        <LinearLayout
+            android:id="@+id/header"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            android:background="@drawable/bg_header_rounded"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivAvatar"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:padding="12dp"
+                android:contentDescription="Avatar"
+                android:src="@drawable/ic_person"
+                app:tint="?attr/colorPrimary" />
+
+            <TextView
+                android:id="@+id/tvTitulo"
+                android:text="Vista previa de perfil"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                android:layout_marginStart="12dp"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <!-- Datos agregados -->
+        <TextView
+            android:id="@+id/tvNombre"
+            android:text="Nombre completo: —"
+            android:layout_marginTop="16dp"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- Aquí pondremos Nivel / Público / Aficiones con saltos de línea -->
+        <TextView
+            android:id="@+id/tvPrefs"
+            android:text="Nivel: —\nPúblico: —\nAficiones: —"
+            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- Idiomas en su propia línea -->
+        <TextView
+            android:id="@+id/tvIdiomas"
+            android:text="Idiomas: —"
+            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- Progreso -->
+        <TextView
+            android:id="@+id/tvProgreso"
+            android:text="Progreso: 0 %"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ProgressBar
+            android:id="@+id/pbProgreso"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:progress="0"
+            android:max="100"
+            android:indeterminate="false"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+</ScrollView>
